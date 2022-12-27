@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": { "title": "Damn Badly Designed API" },
+  "paths": {
+    "/api/v1/cards/credentials": {
+      "get": {
+        "tags": ["Card"],
+        "operationId": "GetCardCredentials",
+        "consumes": [],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [
+          {
+            "name": "CardId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/cards": {
+      "get": {
+        "tags": ["Card"],
+        "operationId": "GetCards",
+        "consumes": [],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "TransferId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/cards/title": {
+      "post": {
+        "tags": ["Card"],
+        "operationId": "UpdateCardTitle",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/users/profile": {
+      "get": {
+        "tags": ["User"],
+        "operationId": "GetProfile",
+        "consumes": [],
+        "produces": ["text/plain", "application/json", "text/json"],
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "query",
+            "description": "UserId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "UserName",
+            "in": "query",
+            "description": "UserName",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": { "name": "Authorization", "in": "header", "type": "apiKey" }
+  },
+  "security": [{ "Bearer": [] }]
+}
